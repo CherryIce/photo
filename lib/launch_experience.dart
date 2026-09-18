@@ -89,7 +89,7 @@ class _BrandSplash extends StatelessWidget {
                 const _BrandMark(size: 112),
                 const SizedBox(height: 26),
                 const Text(
-                  'Lunelle',
+                  'Jufu',
                   style: TextStyle(
                     fontSize: 36,
                     letterSpacing: -.8,
@@ -239,7 +239,7 @@ class _OnboardingState extends State<_Onboarding> {
                 ),
                 const SizedBox(width: 8),
                 const Text(
-                  'Lunelle',
+                  'Jufu',
                   style: TextStyle(
                     fontSize: 19,
                     fontWeight: FontWeight.w800,

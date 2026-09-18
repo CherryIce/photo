@@ -49,7 +49,7 @@ extension AppLocalization on BuildContext {
 
 abstract final class AppStrings {
   static const chinese = <String, String>{
-    'Lunelle': '月映',
+    'Jufu': 'Jufu',
     'A refined finish for every photo': '为每一张照片留下精致余韵',
     'Reset': '重置',
     'Choose Photo': '选照片',

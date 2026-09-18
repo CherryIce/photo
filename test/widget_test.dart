@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:verdant_frame/app_settings.dart';
-import 'package:verdant_frame/main.dart';
-import 'package:verdant_frame/launch_experience.dart';
+import 'package:jufu/app_settings.dart';
+import 'package:jufu/main.dart';
+import 'package:jufu/launch_experience.dart';
 
 void main() {
   testWidgets('first launch shows the guide and skip persists completion', (
@@ -12,13 +12,13 @@ void main() {
     SharedPreferences.setMockInitialValues({'language_code': 'en'});
     final preferences = await SharedPreferences.getInstance();
     await tester.pumpWidget(
-      VerdantFrameApp(
+      JufuApp(
         settings: AppSettingsController(preferences),
         preferences: preferences,
       ),
     );
 
-    expect(find.text('Lunelle'), findsOneWidget);
+    expect(find.text('Jufu'), findsOneWidget);
     expect(find.text('Your story starts with a photo'), findsNothing);
     await tester.pump(const Duration(milliseconds: 900));
     await tester.pumpAndSettle();
@@ -41,11 +41,12 @@ void main() {
     SharedPreferences.setMockInitialValues({'language_code': 'en'});
     final preferences = await SharedPreferences.getInstance();
     await tester.pumpWidget(
-      VerdantFrameApp(
+      JufuApp(
         settings: AppSettingsController(preferences),
         preferences: preferences,
       ),
     );
+    expect(find.text('Jufu'), findsOneWidget);
     await tester.pump(const Duration(milliseconds: 900));
     await tester.pumpAndSettle();
 
@@ -74,7 +75,7 @@ void main() {
     });
     final preferences = await SharedPreferences.getInstance();
     await tester.pumpWidget(
-      VerdantFrameApp(
+      JufuApp(
         settings: AppSettingsController(preferences),
         preferences: preferences,
       ),
@@ -83,6 +84,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('从一张照片开始'), findsNothing);
+    expect(find.text('Jufu'), findsOneWidget);
     expect(find.text('从相册选一张'), findsOneWidget);
   });
 
@@ -94,7 +96,7 @@ void main() {
     SharedPreferences.setMockInitialValues({'language_code': 'zh'});
     final preferences = await SharedPreferences.getInstance();
     await tester.pumpWidget(
-      VerdantFrameApp(
+      JufuApp(
         settings: AppSettingsController(preferences),
         preferences: preferences,
       ),

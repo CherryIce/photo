@@ -1,4 +1,4 @@
-package com.hxw.verdant_frame
+package com.hxw.jufu
 
 import android.content.ContentValues
 import android.os.Build
@@ -11,7 +11,7 @@ import io.flutter.plugin.common.MethodChannel
 class MainActivity : FlutterActivity() {
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
-        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "verdant_frame/photos")
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "jufu/photos")
             .setMethodCallHandler { call, result ->
                 if (call.method != "saveImage") {
                     result.notImplemented()
@@ -28,10 +28,10 @@ class MainActivity : FlutterActivity() {
 
     private fun saveToGallery(bytes: ByteArray, result: MethodChannel.Result) {
         val values = ContentValues().apply {
-            put(MediaStore.Images.Media.DISPLAY_NAME, "greenframe_${System.currentTimeMillis()}.png")
+            put(MediaStore.Images.Media.DISPLAY_NAME, "jufu_${System.currentTimeMillis()}.png")
             put(MediaStore.Images.Media.MIME_TYPE, "image/png")
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                put(MediaStore.Images.Media.RELATIVE_PATH, Environment.DIRECTORY_PICTURES + "/Lunelle")
+                put(MediaStore.Images.Media.RELATIVE_PATH, Environment.DIRECTORY_PICTURES + "/Jufu")
                 put(MediaStore.Images.Media.IS_PENDING, 1)
             }
         }

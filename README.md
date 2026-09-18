@@ -1,16 +1,7 @@
-# verdant_frame
+# Jufu
 
-A new Flutter project.
+Jufu is a bilingual Flutter photo editor for iOS and Android. The product name
+is "Jufu" in both Chinese and English. Its static website and legal drafts live
+in [`website/`](website/).
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Run `flutter pub get`, `flutter analyze`, and `flutter test` from this directory.

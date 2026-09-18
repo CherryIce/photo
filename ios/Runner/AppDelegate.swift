@@ -10,7 +10,7 @@ import UIKit
   ) -> Bool {
     GeneratedPluginRegistrant.register(with: self)
     if let controller = window?.rootViewController as? FlutterViewController {
-      let channel = FlutterMethodChannel(name: "verdant_frame/photos", binaryMessenger: controller.binaryMessenger)
+      let channel = FlutterMethodChannel(name: "jufu/photos", binaryMessenger: controller.binaryMessenger)
       channel.setMethodCallHandler { [weak self] call, result in
         guard call.method == "saveImage",
               let arguments = call.arguments as? [String: Any],

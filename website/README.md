@@ -1,6 +1,6 @@
-# Lunelle website
+# Jufu website
 
-Static, dependency-free website and legal pages for the current Lunelle 1.0
+Static, dependency-free website and legal pages for the current Jufu 1.0
 implementation.
 
 ## Files
@@ -18,7 +18,7 @@ site uses its saved language preference and then the browser language.
 
 ## Product facts reflected in this draft
 
-- no Lunelle account, sign-in, developer cloud library, ads, or analytics SDK
+- no Jufu account, sign-in, developer cloud library, ads, or analytics SDK
 - the user explicitly selects one image from the system photo interface
 - the current primary flow does not use the camera
 - crop, effects, brightness, and text watermark rendering happen on device
@@ -32,9 +32,9 @@ cloud features, analytics, advertising, or account support changes.
 
 ## Required before public publishing
 
-The public operator and contact details have been confirmed as:
+The legal pages currently show:
 
-- operator: `Lunelle独立开发者`
+- operator: `Jufu独立开发者` (brand-renamed; reconfirm the legal operator before publishing)
 - support/privacy email: `djl13333995679@163.com`
 
 Then obtain appropriate legal review for the release regions. These pages are
@@ -48,6 +48,10 @@ current language (including the device language when following the system):
 
 - privacy: `https://lunelleglobal.com/privacy.html?lang=zh` or `?lang=en`
 - terms: `https://lunelleglobal.com/terms.html?lang=zh` or `?lang=en`
+
+These links retain the existing domain so the app does not point to an
+unconfigured address. Update the host and deploy the renamed pages when the
+new Jufu domain is ready.
 
 Keep the released binary, store privacy disclosures, permission descriptions,
 and these pages in sync.

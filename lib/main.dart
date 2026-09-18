@@ -15,19 +15,15 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final preferences = await SharedPreferences.getInstance();
   runApp(
-    VerdantFrameApp(
+    JufuApp(
       settings: AppSettingsController(preferences),
       preferences: preferences,
     ),
   );
 }
 
-class VerdantFrameApp extends StatelessWidget {
-  const VerdantFrameApp({
-    super.key,
-    required this.settings,
-    required this.preferences,
-  });
+class JufuApp extends StatelessWidget {
+  const JufuApp({super.key, required this.settings, required this.preferences});
 
   final AppSettingsController settings;
   final SharedPreferences preferences;
@@ -38,7 +34,7 @@ class VerdantFrameApp extends StatelessWidget {
     child: AnimatedBuilder(
       animation: settings,
       builder: (context, _) => MaterialApp(
-        title: 'Lunelle',
+        title: 'Jufu',
         debugShowCheckedModeBanner: false,
         locale: settings.locale,
         supportedLocales: const [Locale('en'), Locale('zh')],
@@ -70,7 +66,7 @@ class PhotoEditorPage extends StatefulWidget {
 }
 
 class _PhotoEditorPageState extends State<PhotoEditorPage> {
-  static const _photos = MethodChannel('verdant_frame/photos');
+  static const _photos = MethodChannel('jufu/photos');
   static const _watermarkColors = [
     Colors.white,
     Color(0xFFF4EEF8),
@@ -272,7 +268,7 @@ class _PhotoEditorPageState extends State<PhotoEditorPage> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  context.l('Lunelle'),
+                  context.l('Jufu'),
                   style: const TextStyle(
                     fontSize: 28,
                     height: 1.1,

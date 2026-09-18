@@ -1,45 +1,45 @@
 (() => {
   "use strict";
 
-  const languageKey = "lunelle-site-language";
+  const languageKey = "jufu-site-language";
   const supportedLanguages = new Set(["zh", "en"]);
   const page = document.body.dataset.page || "home";
 
   const pageMetadata = {
     home: {
       zh: {
-        title: "Lunelle 月映 — 轻量照片编辑工具",
+        title: "Jufu — 轻量照片编辑工具",
         description:
-          "Lunelle 月映是一款轻量照片编辑工具：调整构图与比例，添加柔和效果和文字水印，再由你决定是否保存到系统相册。",
+          "Jufu 是一款轻量照片编辑工具：调整构图与比例，添加柔和效果和文字水印，再由你决定是否保存到系统相册。",
       },
       en: {
-        title: "Lunelle — A Focused Photo Finishing App",
+        title: "Jufu — A Focused Photo Finishing App",
         description:
           "Refine a crop, add a soft effect and a personal text watermark, then decide whether to save the result to Photos.",
       },
     },
     privacy: {
       zh: {
-        title: "Lunelle 月映隐私政策",
+        title: "Jufu 隐私政策",
         description:
-          "了解 Lunelle 如何在设备本地处理照片、编辑内容、生成图片和语言偏好。",
+          "了解 Jufu 如何在设备本地处理照片、编辑内容、生成图片和语言偏好。",
       },
       en: {
-        title: "Lunelle Privacy Policy",
+        title: "Jufu Privacy Policy",
         description:
-          "Learn how Lunelle handles selected photos, edits, generated images, and language preferences on device.",
+          "Learn how Jufu handles selected photos, edits, generated images, and language preferences on device.",
       },
     },
     terms: {
       zh: {
-        title: "Lunelle 月映用户协议",
+        title: "Jufu 用户协议",
         description:
-          "了解使用 Lunelle 照片编辑功能时适用的权利、责任与服务规则。",
+          "了解使用 Jufu 照片编辑功能时适用的权利、责任与服务规则。",
       },
       en: {
-        title: "Lunelle Terms of Use",
+        title: "Jufu Terms of Use",
         description:
-          "Review the rights, responsibilities, and service rules that apply when using Lunelle.",
+          "Review the rights, responsibilities, and service rules that apply when using Jufu.",
       },
     },
   };

@@ -30,7 +30,7 @@
                                     <constraint firstItem="brand-spark" firstAttribute="centerY" secondItem="brand-mark" secondAttribute="centerY" id="spark-y"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Lunelle" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="brand-title">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Jufu" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="brand-title">
                                 <fontDescription type="system" weight="bold" pointSize="36"/>
                                 <color key="textColor" red="0.169" green="0.133" blue="0.196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
