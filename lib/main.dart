@@ -9,17 +9,28 @@ import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'app_settings.dart';
+import 'launch_experience.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final preferences = await SharedPreferences.getInstance();
-  runApp(VerdantFrameApp(settings: AppSettingsController(preferences)));
+  runApp(
+    VerdantFrameApp(
+      settings: AppSettingsController(preferences),
+      preferences: preferences,
+    ),
+  );
 }
 
 class VerdantFrameApp extends StatelessWidget {
-  const VerdantFrameApp({super.key, required this.settings});
+  const VerdantFrameApp({
+    super.key,
+    required this.settings,
+    required this.preferences,
+  });
 
   final AppSettingsController settings;
+  final SharedPreferences preferences;
 
   @override
   Widget build(BuildContext context) => AppSettingsScope(
@@ -43,7 +54,10 @@ class VerdantFrameApp extends StatelessWidget {
             thumbShape: RoundSliderThumbShape(enabledThumbRadius: 8),
           ),
         ),
-        home: const PhotoEditorPage(),
+        home: LaunchExperience(
+          preferences: preferences,
+          editorBuilder: (context) => const PhotoEditorPage(),
+        ),
       ),
     ),
   );

@@ -109,9 +109,13 @@ abstract final class AppStrings {
 }
 
 abstract final class LegalLinks {
-  // Replace these with your production URLs before release.
-  static final privacy = Uri.parse('https://example.com/privacy-policy');
-  static final terms = Uri.parse('https://example.com/terms-of-use');
+  static Uri privacy(String languageCode) =>
+      _page('privacy.html', languageCode);
+
+  static Uri terms(String languageCode) => _page('terms.html', languageCode);
+
+  static Uri _page(String path, String languageCode) =>
+      Uri.https('lunelleglobal.com', '/$path', {'lang': languageCode});
 }
 
 class SettingsPage extends StatelessWidget {
@@ -120,6 +124,7 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final settings = AppSettingsScope.of(context);
+    final legalLanguage = context.isChinese ? 'zh' : 'en';
     return Scaffold(
       backgroundColor: const Color(0xFFF8F5FC),
       appBar: AppBar(
@@ -172,10 +177,14 @@ class SettingsPage extends StatelessWidget {
                 _linkTile(
                   context,
                   context.l('Privacy Policy'),
-                  LegalLinks.privacy,
+                  LegalLinks.privacy(legalLanguage),
                 ),
                 const Divider(height: 1, color: Color(0xFFE8E1F0)),
-                _linkTile(context, context.l('Terms of Use'), LegalLinks.terms),
+                _linkTile(
+                  context,
+                  context.l('Terms of Use'),
+                  LegalLinks.terms(legalLanguage),
+                ),
               ],
             ),
           ),

@@ -37,20 +37,17 @@ The public operator and contact details have been confirmed as:
 - operator: `Lunelle独立开发者`
 - support/privacy email: `djl13333995679@163.com`
 
-Before publishing, confirm the production website domain used by the app's
-privacy and terms links.
-
 Then obtain appropriate legal review for the release regions. These pages are
 product-specific compliance drafts, not legal advice.
 
 ## App integration
 
-After the site has a confirmed HTTPS domain, replace the two placeholder URLs in
-`lib/app_settings.dart`:
+The app's settings page in `lib/app_settings.dart` opens the published HTTPS
+pages in the external browser, using `lang=zh` or `lang=en` to match the app's
+current language (including the device language when following the system):
 
-- privacy: `https://<confirmed-domain>/privacy.html`
-- terms: `https://<confirmed-domain>/terms.html`
+- privacy: `https://lunelleglobal.com/privacy.html?lang=zh` or `?lang=en`
+- terms: `https://lunelleglobal.com/terms.html?lang=zh` or `?lang=en`
 
-Do not update the app to an unverified or unreachable domain. Keep the released
-binary, store privacy disclosures, permission descriptions, and these pages in
-sync.
+Keep the released binary, store privacy disclosures, permission descriptions,
+and these pages in sync.
